@@ -14,19 +14,9 @@ import com.example.retrofit_api_caching.model.Post
 class MyAdapter(private val context : Context, private val userlist: List<Post>): RecyclerView.Adapter<MyAdapter.ViewHolder>() {
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
-        var userId: TextView
-        var title: TextView
-        var imageView: ImageView
-
-        init {
-            userId = itemView.findViewById(R.id.tv_userid)
-            title = itemView.findViewById(R.id.tv_title)
-            imageView = itemView.findViewById(R.id.iv_imageView)
-
-        }
-
-
-
+        var userId: TextView = itemView.findViewById(R.id.tv_userid)
+        var title: TextView = itemView.findViewById(R.id.tv_title)
+        var imageView: ImageView = itemView.findViewById(R.id.iv_imageView)
 
     }
 

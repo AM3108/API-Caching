@@ -1,5 +1,6 @@
 package com.example.retrofit_api_caching
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getMyData() {
-
+        val item:Int = 10
         val retrofitData = RetrofitInstance.retrofitBuilder.getData()
         //Ctrl+shift+space to get the callbacks
         retrofitData.enqueue(object : Callback<ModelClass?> {
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 //                myAdapter = MyAdapter(baseContext,aa)
 //                recyclerView.adapter = myAdapter
                 dataList.addAll(aa)
-                myAdapter.notifyDataSetChanged()
+                myAdapter.notifyItemInserted(item)
             }
 
             override fun onFailure(call: Call<ModelClass?>, t: Throwable) {
